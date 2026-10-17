@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>John Alex Tip VIP Membership</title>
+<style>
+:root{--green:#064b36;--bright:#11a36b;--gold:#f2c14e;--bg:#f4f7f5;--ink:#17241e;--muted:#66766d;--line:#dfe8e2}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Arial;color:var(--ink)}
+header{background:linear-gradient(120deg,#043c2a,#087a50);color:#fff;padding:19px max(16px,calc((100% - 980px)/2));display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.logo{font-size:21px;font-weight:900}.logo span{color:var(--gold)}.badge{font-size:11px;border:1px solid #b9ddca;padding:4px 8px;border-radius:20px}
+main{max-width:980px;margin:24px auto;padding:0 14px}.hero{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px;margin-bottom:16px}.hero h1{font-size:clamp(25px,5vw,38px);line-height:1.15;margin:0 0 12px}.hero p{color:var(--muted);max-width:650px}.gold{color:#a36c00}.layout{display:grid;grid-template-columns:1fr 1fr;gap:16px}.card{background:#fff;border:1px solid var(--line);border-radius:15px;padding:20px}.card h2{margin:0 0 10px;font-size:20px}label{display:block;font-weight:700;font-size:13px;margin:12px 0 5px}input{width:100%;padding:12px;border:1px solid #cddbd2;border-radius:9px;font:inherit}button{width:100%;margin-top:15px;padding:12px;background:var(--bright);border:0;border-radius:9px;color:#fff;font-weight:800;font:inherit;cursor:pointer}.muted{color:var(--muted);font-size:13px}.price{font-size:32px;font-weight:900;color:var(--green);margin:8px 0}.list{padding-left:20px}.list li{margin:8px 0}.notice{padding:11px 13px;background:#fff5d9;border:1px solid #eed78f;border-radius:10px;font-size:13px;margin-bottom:16px}.success{padding:14px;background:#e5f8ec;border:1px solid #b3e4c3;border-radius:10px;color:#145d35;margin-top:15px}.hidden{display:none}footer{text-align:center;padding:22px;color:var(--muted);font-size:12px}@media(max-width:700px){.layout{grid-template-columns:1fr}.hero{padding:19px}}
+</style></head><body>
+<header><div class="logo">JOHN ALEX <span>TIP VIP</span></div><span class="badge">VIP MEMBERSHIP</span></header>
+<main>
+<div class="notice"><strong>Membership terms:</strong> VIP access is confirmed only after payment has been successfully verified. Do not enter payment details or passwords for other services on this prototype.</div>
+<section class="hero"><h1>Unlock <span class="gold">VIP Membership</span></h1><p>Register for John Alex Tip VIP membership. Complete the form and follow the payment instructions. Your VIP status will be confirmed after the payment is verified.</p></section>
+<div class="layout">
+<section class="card"><h2>Create your membership account</h2><p class="muted">Enter your details to start your VIP application.</p>
+<form id="form">
+<label for="name">Full name</label><input id="name" required maxlength="80" autocomplete="name" placeholder="Your full name">
+<label for="email">Email address</label><input id="email" type="email" required autocomplete="email" placeholder="you@example.com">
+<label for="phone">Phone number</label><input id="phone" type="tel" required autocomplete="tel" placeholder="Your phone number">
+<label for="password">Create password</label><input id="password" type="password" required minlength="8" autocomplete="new-password" placeholder="At least 8 characters">
+<button type="submit">Continue to payment instructions</button>
+<p class="muted">Prototype only: this form does not send or securely store your details.</p>
+</form><div id="success" class="success hidden"></div></section>
+<section class="card"><h2>VIP membership</h2><div class="price">Set your price</div><p class="muted">Choose your actual membership price and approved payment method before publishing.</p>
+<ul class="list"><li>VIP member profile</li><li>Access to members-only content after verification</li><li>Membership status and renewal information</li><li>Help and support contact</li></ul>
+<div class="notice">No payment provider is connected yet. Do not claim payment was received or VIP access approved until you verify it.</div>
+<h3>After payment</h3><p class="muted">When payment is confirmed, an administrator can mark the membership as approved. The prototype does not process real payments automatically.</p>
+</section></div></main><footer>John Alex Tip VIP · Independent membership prototype</footer>
+<script>
+document.getElementById('form').addEventListener('submit',function(e){e.preventDefault();const name=document.getElementById('name').value.trim();document.getElementById('success').classList.remove('hidden');document.getElementById('success').innerHTML='<strong>VIP application received, '+escapeText(name)+'!</strong><br>Your application has been started successfully. Follow the official payment instructions provided by John Alex Tip. Your VIP membership will be approved after payment is verified.';});
+function escapeText(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+</script></body></html>
